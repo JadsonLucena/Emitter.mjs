@@ -1,6 +1,6 @@
 class Emitter {
 
-    #events;
+	#events;
 
 	constructor() {
 
@@ -61,6 +61,19 @@ class Emitter {
 			}
 
 		}
+
+	}
+
+
+	on(name, callback) {
+
+		this.addEventListener(name, callback);
+
+	}
+
+	off(name, callback) {
+
+		this.removeEventListener(name, callback);
 
 	}
 
