@@ -8,6 +8,16 @@ class Emitter {
 
 	}
 
+	_emit(name, ...args) {
+
+		if (name in this.#events) {
+
+			this.#events[name].forEach(callback => callback(...args));
+
+		}
+
+	}
+
 	addEventListener(name, callback) {
 
 		if (typeof callback != 'function') {
