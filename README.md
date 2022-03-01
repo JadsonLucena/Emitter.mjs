@@ -1,4 +1,4 @@
-# Emitter
+# Emitter.mjs
 Using the observer pattern, define listeners in your class.
 
 
@@ -33,7 +33,7 @@ off(name: string, callback: (...args: any[]) => void): void // Alias for removeE
 ```html
 <script type="module">
 
-import Emitter from 'https://cdn.jsdelivr.net/gh/JadsonLucena/Emitter@main/src/Emitter.js';
+import Emitter from 'https://cdn.jsdelivr.net/gh/JadsonLucena/Emitter.js@main/src/Emitter.js';
 
 class Test extends Emitter {
 
