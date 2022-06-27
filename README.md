@@ -14,7 +14,7 @@ Emitter()
 
 ```javascript
 // Methods
-_emit(name: string, ...args: any[]): void
+_emit(name: string, ...args: any[]): Promise<void>
 ```
 
 ```javascript
@@ -33,7 +33,7 @@ off(name: string, callback: (...args: any[]) => void): void // Alias for removeE
 ```html
 <script type="module">
 
-import Emitter from 'https://cdn.jsdelivr.net/gh/JadsonLucena/Emitter.js@main/src/Emitter.js';
+import Emitter from 'https://cdn.jsdelivr.net/gh/JadsonLucena/Emitter.mjs@latest/src/Emitter.js';
 
 class Test extends Emitter {
 
@@ -47,7 +47,7 @@ class Test extends Emitter {
 
         window.onkeypress = e => super._emit('keypress', e.code, e.key);
 
-        setInterval(() => super._emit('setInterval', new Date().getTime()), 3000);
+        setInterval(async () => await super._emit('setInterval', new Date().getTime()), 3000);
 
     }
 
