@@ -8,11 +8,11 @@ class Emitter {
 
 	}
 
-	_emit(name, ...args) {
+	async _emit(name, ...args) {
 
 		if (name in this.#events) {
 
-			this.#events[name].forEach(callback => callback(...args));
+			await Promise.allSettled(this.#events[name].map(callback => callback(...args)));
 
 		}
 
